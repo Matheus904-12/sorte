@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sortear nomes</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: hsl(251, 100%, 69%); /* Cor de fundo vibrante */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.sorteio {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+}
+
+h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.linha {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    resize: vertical;
+    min-height: 100px;
+}
+
+button.sortear {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button.sortear:hover {
+    background-color: #0056b3;
+}
+
+.resultado p {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#resultadoValor {
+    color: #007bff;
+}
+
+
+    </style>
+</head>
+<body>
+    <main>
+        <section class="sorteio">
+            <div class="container">
+                <h2>SORTEAR NOMES</h2>
+                <div class="linha"></div>
+                <div class="formulario container">
+                    <label for="entradaNomes">Adicione os nomes patra o sorteio!</label>
+                    <textarea name="" id="entradaNomes" placeholder="Adicione os nomes separados por virgula. ex(Matheus, MIcael, Jessica)"></textarea>
+                    <button class="sortear">Sortear</button>
+                </div>
+                <div class="resultado">
+                    <p>Resultado: </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>
