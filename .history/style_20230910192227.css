@@ -37,15 +37,15 @@ h1 {
 }
 
 .options a:hover {
-  background-color: #ffbb2f;
+  background-color: #ffbd03;
 }
 
 .options a:last-child {
-  background-color: #008000;
+  background-color: #6c757d;
 }
 
 .options a:last-child:hover {
-  background-color: #0a5c0a;
+  background-color: #545b62;
 }
 
 a.btn-secondary {

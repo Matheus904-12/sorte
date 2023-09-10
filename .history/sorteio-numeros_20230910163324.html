@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Sorteio de números</title>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center">Sorteio de números</h1>
+    <div class="range">
+      <label for="min">Número mínimo:</label>
+      <input type="number" id="min" value="1" class="form-control">
+      <label for="max">Número máximo:</label>
+      <input type="number" id="max" value="100" class="form-control">
+    </div>
+    <button id="sortear" class="btn btn-primary">Sortear</button>
+    <div id="resultado" class="text-center"></div>
+
+    <div id="sorteados" class="text-center">
+      <h3>Números sorteados</h3>
+      <ul id="lista-sorteados"></ul>
+    </div>
+
+    <a href="index.html" class="btn btn-secondary float-right">Voltar</a>
+  </div>
+
+  <style>
+    /* Alterações para o layout */
+
+    .container {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* Alterações para o gradiente */
+
+    body {
+      background-image: linear-gradient(to right, #fff, #000);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    /* Alterações para as fontes e cores */
+
+    h1 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 2em;
+      color: #fff;
+    }
+
+    input {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1em;
+      color: #fff;
+    }
+
+    button {
+      background-color: #000;
+      color: #fff;
+      border-radius: 5px;
+      border: none;
+      text-decoration: none;
+      cursor: pointer;
+      animation: fadeIn .3s ease-in-out;
+    }
+
+    /* Alterações para o espaço e a organização */
+
+    .range {
+      margin-top: 20px;
+    }
+
+    .resultado {
+      margin-top: 20px;
+    }
+
+    /* Alterações para os detalhes adicionais */
+
+    #sorteados {
+      margin-top: 20px;
+    }
+
+    #lista-sorteados {
+      margin-bottom: 20px;
+    }
+
+    #voltar {
+      background-color: #000;
+      color: #fff;
+      border-radius: 5px;
+      border: none;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* Animações */
+
+    .range {
+      transition: all .3s ease-in-out;
+    }
+
+    .range input {
+      transition: all .3s ease-in-out;
+    }
+
+    .btn {
+      animation: fadeIn .3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+  <script>
+    // Função para sortear um número entre dois valores
+    function sortear(min, max) {
+      // Gera um número aleatório entre os dois valores
+      var numero = Math.floor(Math.random() * (max - min + 1)) + min;
+
+      // Exibe o número sorteado
+      document.querySelector("#resultado").innerHTML = numero;
+
+      // Adiciona o número sorteado à lista
+      var sorteados = document.querySelector("#lista-sorteados");
+      var li = document.createElement("li");
+      li.innerHTML = numero;
+// Função para sortear um número entre dois valores
+function sortear(min, max) {
+  // Gera um número aleatório entre os dois valores
+  var numero = Math.floor(Math.random() * (max - min + 1)) + min;
+
+  // Exibe o número sorteado
+  document.querySelector("#resultado").innerHTML = numero;
+
+  // Adiciona o número sorteado à lista
+  var sorteados = document.querySelector("#lista-sorteados");
+  var li = document.createElement("li");
+  li.innerHTML = numero;
+  sorteados.appendChild(li);
+}
+
+// Evento para o botão de sorteio
+document.querySelector("#sortear").addEventListener("click", function() {
+  // Obtém os valores dos campos de entrada
+  var min = parseInt(document.querySelector("#min").value);
+  var max = parseInt(document.querySelector("#max").value);
+
+  // Sorteia o número
+  sortear(min, max);
+});
+
+  </script>
+</body>
+</html>

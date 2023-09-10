@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Sorteio de números</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Sorteio de números</h1>
+    <div class="range">
+      <label for="min">Número mínimo:</label>
+      <input type="number" id="min" value="1">
+      <label for="max">Número máximo:</label>
+      <input type="number" id="max" value="100">
+    </div>
+    <button id="sortear">Sortear</button>
+    <div id="resultado"></div>
+  </div>
+
+  <script>
+    // Função para sortear um número entre dois valores
+    function sortear(min, max) {
+      // Gera um número aleatório entre os dois valores
+      var numero = Math.floor(Math.random() * (max - min + 1)) + min;
+
+      // Exibe o número sorteado
+      document.querySelector("#resultado").innerHTML = numero;
+    }
+
+    // Evento para o botão de sorteio
+    document.querySelector("#sortear").addEventListener("click", function() {
+      // Obtém os valores dos campos de entrada
+      var min = parseInt(document.querySelector("#min").value);
+      var max = parseInt(document.querySelector("#max").value);
+
+      // Sorteia o número
+      sortear(min, max);
+    });
+  </script>
+</body>
+</html>

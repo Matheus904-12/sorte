@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Sorteio de nomes</title>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center">Sorteio de nomes</h1>
+    <div class="box">
+      <input type="text" id="nome" placeholder="Adicione um nome" class="form-control">
+      <button id="adicionar" class="btn btn-primary">Adicionar nome</button>
+    </div>
+    <ul id="nomes">
+        <!-- Nomes a serem sorteados -->
+      </ul>
+      
+    <div class="results">
+      <button id="sortear" class="btn btn-primary">Sortear</button>
+      <div id="resultado" class="text-center"></div>
+    </div>
+    <a href="index.html" class="btn btn-secondary float-right">Voltar</a>
+  </div>
+
+  <style>
+    .container {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 2em;
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 20px;
+      background-color: #000;
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    div.box {
+      width: 45%;
+      margin-right: 5%;
+      float: left;
+    }
+
+    div.results {
+      width: 45%;
+      float: right;
+    }
+
+    div.resultado {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 1.5em;
+    }
+
+    a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .btn-primary {
+      color: #fff;
+      border-color: #fff;
+      background-color: #000;
+      border-radius: 6px;
+    }
+
+    .btn-primary:hover {
+    
+    }
+
+    .btn-secondary {
+      color: #fff;
+      border-color: #fff;
+      background-color: #000;
+      border-radius: 5px;
+    }
+
+    .btn-secondary:hover {
+      background-color: #999;
+    }
+  </style>
+  <script>
+   
+// Função para registrar um nome na lista
+function registrarNome() {
+  // Obtém o nome digitado no campo de entrada
+  var nome = document.querySelector("#nome").value;
+
+  // Verifica se o nome não é vazio
+  if (nome === "") {
+    alert("O nome não pode ser vazio.");
+    return;
+  }
+
+  // Cria um elemento <li> com o nome
+  var li = document.createElement("li");
+  li.innerHTML = nome;
+
+  // Adiciona o elemento <li> à lista
+  var nomes = document.querySelector("#nomes");
+  nomes.appendChild(li);
+}
+
+// Função para sortear um nome da lista
+function sortear() {
+  // Obtém o número de itens na lista
+  var len = document.querySelector("#nomes").children.length;
+
+  // Gera um número aleatório entre 0 e o número de itens
+  var index = Math.floor(Math.random() * len);
+
+  // Obtém o nome sorteado
+  var nome = document.querySelector("#nomes").children[index].innerHTML;
+
+  // Exibe o nome sorteado
+  document.querySelector("#resultado").innerHTML = nome;
+}
+
+// Evento para o botão de adicionar nome
+document.querySelector("#adicionar").addEventListener("click", registrarNome);
+
+// Evento para o botão de sorteio
+document.querySelector("#sortear").addEventListener("click", sortear);
+
+
+  </script>
+</body>
+</html>

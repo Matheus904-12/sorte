@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Sorteio de nomes</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Sorteio de nomes</h1>
+    <input type="text" id="nome" placeholder="Adicione um nome">
+    <button id="adicionar">Adicionar nome</button>
+    <ul id="nomes">
+      <li>Nome 1</li>
+      <li>Nome 2</li>
+      <li>Nome 3</li>
+    </ul>
+    <button id="sortear">Sortear</button>
+    <div id="resultado"></div>
+  </div>
+
+  <style>
+    .container {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 2em;
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #000;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 20px;
+      background-color: #000;
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    div.resultado {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+  </style>
+  <script>
+    // Função para sortear um nome da lista
+    function sortear() {
+      // Obtém o número de itens na lista
+      var len = document.querySelector("#nomes").children.length;
+
+      // Gera um número aleatório entre 0 e o número de itens
+      var index = Math.floor(Math.random() * len);
+
+      // Obtém o nome sorteado
+      var nome = document.querySelector("#nomes").children[index].innerHTML;
+
+      // Exibe o nome sorteado
+      document.querySelector("#resultado").innerHTML = nome;
+    }
+
+    // Evento para o botão de sorteio
+    document.querySelector("#sortear").addEventListener("click", sortear);
+  </script>
+</body>
+</html>

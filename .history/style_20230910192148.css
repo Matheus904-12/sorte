@@ -30,22 +30,22 @@ h1 {
   margin: 10px 0;
   padding: 15px 0;
   border-radius: 5px;
-  background-color: #ffd700;
+  background-color: #ffbd03;
   color: #fff;
   font-size: 1.2em;
   transition: background-color 0.3s;
 }
 
 .options a:hover {
-  background-color: #ffbb2f;
+  background-color: #;
 }
 
 .options a:last-child {
-  background-color: #008000;
+  background-color: #6c757d;
 }
 
 .options a:last-child:hover {
-  background-color: #0a5c0a;
+  background-color: #545b62;
 }
 
 a.btn-secondary {

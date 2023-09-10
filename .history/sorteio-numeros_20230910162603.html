@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Sorteio de números</title>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center">Sorteio de números</h1>
+    <div class="range">
+      <label for="min">Número mínimo:</label>
+      <input type="number" id="min" value="1" class="form-control">
+      <label for="max">Número máximo:</label>
+      <input type="number" id="max" value="100" class="form-control">
+    </div>
+    <button id="sortear" class="btn btn-primary">Sortear</button>
+    <div id="resultado" class="text-center"></div>
+    <a href="index.html" class="btn btn-secondary">Voltar</a>
+  </div>
+
+  <style>
+    .container {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 2em;
+      text-align: center;
+    }
+
+    .range {
+      margin-top: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 20px;
+      background-color: #000;
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    div.resultado {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+
+    #voltar {
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+  
+    }
+  </style>
+  <script>
+    // Função para sortear um número entre dois valores
+    function sortear(min, max) {
+      // Gera um número aleatório entre os dois valores
+      var numero = Math.floor(Math.random() * (max - min + 1)) + min;
+
+      // Exibe o número sorteado
+      document.querySelector("#resultado").innerHTML = numero;
+    }
+
+    // Evento para o botão de sorteio
+    document.querySelector("#sortear").addEventListener("click", function() {
+      // Obtém os valores dos campos de entrada
+      var min = parseInt(document.querySelector("#min").value);
+      var max = parseInt(document.querySelector("#max").value);
+
+      // Sorteia o número
+      sortear(min, max);
+    });
+  </script>
+</body>
+</html>

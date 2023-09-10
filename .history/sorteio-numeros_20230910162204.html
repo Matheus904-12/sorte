@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Sorteio de números</title>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center">Sorteio de números</h1>
+    <div class="range">
+      <label for="min">Número mínimo:</label>
+      <input type="number" id="min" value="1" class="form-control">
+      <label for="max">Número máximo:</label>
+      <input type="number" id="max" value="100" class="form-control">
+    </div>
+    <button id="sortear" class="btn btn-primary">Sortear</button>
+    <div id="resultado" class="text-center"></div>
+    <a href="index.html" class="btn btn-secondary">Voltar</a>
+  </div>
+
+  <style>
+    .container {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 2em;
+      text-align: center;
+    }
+
+    .range {
+      margin-top: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 20px;
+      background-color: #000;
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    div.resultado {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <script>
+    // Função para registrar um número na lista
+function registrarNumero() {
+  // Obtém o número digitado no campo de entrada
+  var numero = document.querySelector("#numero").value;
+
+  // Verifica se o número não é vazio
+  if (numero === "") {
+    alert("O número não pode ser vazio.");
+    return;
+  }
+
+  // Cria um elemento <li> com o número
+  var li = document.createElement("li");
+  li.innerHTML = numero;
+
+  // Adiciona o elemento <li> à lista
+  var numeros = document.querySelector("#numeros");
+  numeros.appendChild(li);
+}
+
+// Função para sortear um número da lista
+function sortear() {
+  // Obtém o número de itens na lista
+  var len = document.querySelector("#numeros").children.length;
+
+  // Gera um número aleatório entre 0 e o número de itens
+  var index = Math.floor(Math.random() * len);
+
+  // Obtém o número sorteado
+  var numero = document.querySelector("#numeros").children[index].innerHTML;
+
+  // Exibe o número sorteado
+  document.querySelector("#resultado").innerHTML = numero;
+}
+
+// Evento para o botão de adicionar número
+document.querySelector("#adicionar").addEventListener("click", registrarNumero);
+
+// Evento para o botão de sorteio
+document.querySelector("#sortear").addEventListener("click", sortear);
+
+// Cria um espaço para os números sorteados
+var sorteados = document.createElement("div");
+sorteados.id = "sorteados";
+
+// Adiciona o espaço para os números sorteados à página
+document.querySelector("#results").appendChild(sorteados);
+
+// Cria um botão de voltar personalizado
+var voltar = document.createElement("button");
+voltar.id = "voltar";
+voltar.innerHTML = "Voltar";
+voltar.style.backgroundColor = "#000";
+voltar.style.color = "#fff";
+voltar.style.borderRadius = "5px";
+
+// Adiciona o botão de voltar à página
+document.querySelector("#results").appendChild(voltar);
+
+// Evento para o botão de voltar
+document.querySelector("#voltar").addEventListener("click", function() {
+  location.href = "index.html";
+});
+
+  </script>
+</body>
+</html>

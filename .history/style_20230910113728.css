@@ -1,0 +1,35 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2em;
+  text-align: center;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.option {
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius
+}
+
+.option:hover {
+  background-color: #ccc;
+}
